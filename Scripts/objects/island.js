@@ -18,18 +18,21 @@ var objects;
         Island.prototype._checkBounds = function (value) {
             if (this.y >= value) {
                 //Check if the top of the ocean has touched the top of the screen
-                this._reset(-this._height);
+                this._reset(this._topBounds);
             }
         };
         //reset the ocean offscreen
         Island.prototype._reset = function (value) {
+            var leftBounds;
+            var rightBounds;
             this.y = value;
+            this.x = Math.floor(Math.random() * this._rightBounds);
         };
         //PUBLIC METHODS+++++++++++++++++
         Island.prototype.update = function () {
             //scroll the ocean by 5px
             this.y += this._speed.y;
-            this._checkBounds(config.Screen.HEIGHT + this._height);
+            this._checkBounds(this._bottomBounds);
         };
         return Island;
     })(objects.GameObject);
