@@ -32,6 +32,8 @@ var scenes;
                 this._clouds[cloud] = new objects.Cloud();
                 this.addChild(this._clouds[cloud]);
             }
+            //ADDED COLLISION MANAGER
+            this._collision = new managers.Collision(this._player);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -41,8 +43,10 @@ var scenes;
             this._island.update();
             for (var cloud in this._clouds) {
                 this._clouds[cloud].update();
+                this._collision.check(cloud);
             }
             this._player.update();
+            this._collision.check(this._island);
         };
         return Play;
     })(objects.Scene);

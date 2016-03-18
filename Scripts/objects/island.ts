@@ -8,7 +8,9 @@ module objects {
         {
             super("island");
             this._speed.y=5;
-            this._reset(-this._height);
+            this._reset(-this.height);
+            this.name="island";
+           
         }
         
         //PRIVATE METHODS++++++++++++++++++

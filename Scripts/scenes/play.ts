@@ -7,6 +7,7 @@ module scenes {
         private _clouds:objects.Cloud[];
         private _cloudCount:number;
         private _player:objects.Player;
+        private _collision:managers.Collision;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -43,6 +44,9 @@ module scenes {
              this.addChild(this._clouds[cloud]);
             }
             
+            //ADDED COLLISION MANAGER
+            this._collision=new managers.Collision(this._player);
+            
             // add this scene to the global stage container
             stage.addChild(this);
         }
@@ -55,9 +59,12 @@ module scenes {
             for (var cloud in this._clouds)
             {
                 this._clouds[cloud].update();
+                this._collision.check(cloud);
             }
             
             this._player.update();
+            
+            this._collision.check(this._island);
         }
         
         
