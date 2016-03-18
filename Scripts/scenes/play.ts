@@ -4,8 +4,8 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _ocean: objects.Ocean;
         private _island:objects.Island;
-        private _cloud:objects.Cloud;
-        
+        private _clouds:objects.Cloud[];
+        private _cloudCount:number;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -17,6 +17,12 @@ module scenes {
         // Start Method
         public start(): void {
             
+            //set cloudcount
+            this._cloudCount=3;
+            
+            //instantiate cloud array
+            this._clouds = new Array<objects.Cloud>();
+            
             this._ocean =new objects.Ocean();
             this.addChild(this._ocean);
             
@@ -25,8 +31,11 @@ module scenes {
             this.addChild(this._island);
             
             //added cloud
-            this._cloud =new objects.Cloud();
-            this.addChild(this._cloud);
+            for( var cloud:number=0; cloud<this._cloudCount; cloud++)
+            {
+             this._clouds[cloud] = new objects.Cloud();
+             this.addChild(this._clouds[cloud]);
+            }
             
             // add this scene to the global stage container
             stage.addChild(this);
@@ -36,7 +45,11 @@ module scenes {
         public update(): void {
             this._ocean.update();
             this._island.update();
-            this._cloud.update();
+            
+            for (var cloud in this._clouds)
+            {
+                this._clouds[cloud].update();
+            }
         }
         
         

@@ -15,14 +15,20 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            //set cloudcount
+            this._cloudCount = 3;
+            //instantiate cloud array
+            this._clouds = new Array();
             this._ocean = new objects.Ocean();
             this.addChild(this._ocean);
             //added island
             this._island = new objects.Island();
             this.addChild(this._island);
             //added cloud
-            this._cloud = new objects.Cloud();
-            this.addChild(this._cloud);
+            for (var cloud = 0; cloud < this._cloudCount; cloud++) {
+                this._clouds[cloud] = new objects.Cloud();
+                this.addChild(this._clouds[cloud]);
+            }
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -30,7 +36,9 @@ var scenes;
         Play.prototype.update = function () {
             this._ocean.update();
             this._island.update();
-            this._cloud.update();
+            for (var cloud in this._clouds) {
+                this._clouds[cloud].update();
+            }
         };
         return Play;
     })(objects.Scene);
