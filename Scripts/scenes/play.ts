@@ -4,6 +4,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _ocean: objects.Ocean;
         private _island:objects.Island;
+        private _cloud:objects.Cloud;
         
         
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -23,6 +24,10 @@ module scenes {
             this._island =new objects.Island();
             this.addChild(this._island);
             
+            //added cloud
+            this._cloud =new objects.Cloud();
+            this.addChild(this._cloud);
+            
             // add this scene to the global stage container
             stage.addChild(this);
         }
@@ -31,6 +36,7 @@ module scenes {
         public update(): void {
             this._ocean.update();
             this._island.update();
+            this._cloud.update();
         }
         
         

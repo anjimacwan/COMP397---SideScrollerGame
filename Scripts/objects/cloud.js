@@ -5,35 +5,37 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    var Island = (function (_super) {
-        __extends(Island, _super);
+    var Cloud = (function (_super) {
+        __extends(Cloud, _super);
         //PRIVATE INSTANCE VARIABLES++++++++++++++++++
         //CONSTRUCTOR++++++++++++++++++
-        function Island() {
-            _super.call(this, "island");
-            this._speed.y = 5;
-            this._reset(-this._height);
+        function Cloud() {
+            _super.call(this, "cloud");
+            this._reset(this._topBounds);
         }
         //PRIVATE METHODS++++++++++++++++++
-        Island.prototype._checkBounds = function (value) {
+        Cloud.prototype._checkBounds = function (value) {
             if (this.y >= value) {
                 //Check if the top of the ocean has touched the top of the screen
                 this._reset(this._topBounds);
             }
         };
-        //reset the ocean offscreen
-        Island.prototype._reset = function (value) {
+        //reset the cloud offscreen
+        Cloud.prototype._reset = function (value) {
+            this._speed.y = Math.floor(Math.random() * 5) + 5;
+            this._speed.x = Math.floor(Math.random() * 4) - 2;
             this.y = value;
             this.x = Math.floor(Math.random() * this._rightBounds);
         };
         //PUBLIC METHODS+++++++++++++++++
-        Island.prototype.update = function () {
-            //scroll the ocean by 5px
+        Cloud.prototype.update = function () {
+            //scroll the cloud
             this.y += this._speed.y;
+            this.x += this._speed.x;
             this._checkBounds(this._bottomBounds);
         };
-        return Island;
+        return Cloud;
     })(objects.GameObject);
-    objects.Island = Island;
+    objects.Cloud = Cloud;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=cloud.js.map
