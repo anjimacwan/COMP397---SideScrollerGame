@@ -24,6 +24,9 @@ var scenes;
             //added island
             this._island = new objects.Island();
             this.addChild(this._island);
+            //added the player
+            this._player = new objects.Player();
+            this.addChild(this._player);
             //added cloud
             for (var cloud = 0; cloud < this._cloudCount; cloud++) {
                 this._clouds[cloud] = new objects.Cloud();
@@ -39,6 +42,7 @@ var scenes;
             for (var cloud in this._clouds) {
                 this._clouds[cloud].update();
             }
+            this._player.update();
         };
         return Play;
     })(objects.Scene);

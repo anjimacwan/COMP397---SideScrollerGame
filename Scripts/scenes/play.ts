@@ -6,6 +6,7 @@ module scenes {
         private _island:objects.Island;
         private _clouds:objects.Cloud[];
         private _cloudCount:number;
+        private _player:objects.Player;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -30,6 +31,11 @@ module scenes {
             this._island =new objects.Island();
             this.addChild(this._island);
             
+            //added the player
+            this._player =new objects.Player();
+            this.addChild(this._player);
+            
+            
             //added cloud
             for( var cloud:number=0; cloud<this._cloudCount; cloud++)
             {
@@ -50,6 +56,8 @@ module scenes {
             {
                 this._clouds[cloud].update();
             }
+            
+            this._player.update();
         }
         
         
