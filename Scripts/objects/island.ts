@@ -1,14 +1,14 @@
 module objects {
     
-    export class Ocean extends objects.GameObject {
+    export class Island extends objects.GameObject {
         //PRIVATE INSTANCE VARIABLES++++++++++++++++++
         
         //CONSTRUCTOR++++++++++++++++++
         constructor()
         {
-            super("ocean");
+            super("island");
             this._speed.y=5;
-            this._reset(-960);
+            this._reset(-this._height);
         }
         
         //PRIVATE METHODS++++++++++++++++++
@@ -17,7 +17,7 @@ module objects {
         if(this.y >= value)
         {
             //Check if the top of the ocean has touched the top of the screen
-            this._reset(-960);
+            this._reset(-this._height);
         }    
         }
         
@@ -30,7 +30,7 @@ module objects {
         public update():void {
             //scroll the ocean by 5px
             this.y +=this._speed.y;
-            this._checkBounds(0);
+            this._checkBounds( config.Screen.HEIGHT + this._height);
         }
     }
 }

@@ -5,34 +5,34 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    var Ocean = (function (_super) {
-        __extends(Ocean, _super);
+    var Island = (function (_super) {
+        __extends(Island, _super);
         //PRIVATE INSTANCE VARIABLES++++++++++++++++++
         //CONSTRUCTOR++++++++++++++++++
-        function Ocean() {
-            _super.call(this, "ocean");
+        function Island() {
+            _super.call(this, "island");
             this._speed.y = 5;
-            this._reset(-960);
+            this._reset(-this._height);
         }
         //PRIVATE METHODS++++++++++++++++++
-        Ocean.prototype._checkBounds = function (value) {
+        Island.prototype._checkBounds = function (value) {
             if (this.y >= value) {
                 //Check if the top of the ocean has touched the top of the screen
-                this._reset(-960);
+                this._reset(-this._height);
             }
         };
         //reset the ocean offscreen
-        Ocean.prototype._reset = function (value) {
+        Island.prototype._reset = function (value) {
             this.y = value;
         };
         //PUBLIC METHODS+++++++++++++++++
-        Ocean.prototype.update = function () {
+        Island.prototype.update = function () {
             //scroll the ocean by 5px
             this.y += this._speed.y;
-            this._checkBounds(0);
+            this._checkBounds(config.Screen.HEIGHT + this._height);
         };
-        return Ocean;
+        return Island;
     })(objects.GameObject);
-    objects.Ocean = Ocean;
+    objects.Island = Island;
 })(objects || (objects = {}));
-//# sourceMappingURL=ocean.js.map
+//# sourceMappingURL=island.js.map

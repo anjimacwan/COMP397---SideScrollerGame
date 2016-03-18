@@ -17,11 +17,16 @@ var scenes;
         Play.prototype.start = function () {
             this._ocean = new objects.Ocean();
             this.addChild(this._ocean);
+            //added island
+            this._island = new objects.Island();
+            this.addChild(this._island);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
+            this._ocean.update();
+            this._island.update();
         };
         return Play;
     })(objects.Scene);
