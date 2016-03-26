@@ -13,7 +13,6 @@
 /// <reference path="../managers/collision.ts" />
 
 /// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/desert.ts" />
 /// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/play.ts" />

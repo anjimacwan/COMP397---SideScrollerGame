@@ -19,8 +19,10 @@ var scenes;
             this._cloudCount = 3;
             //instantiate cloud array
             this._clouds = new Array();
-            this._ocean = new objects.Ocean();
-            this.addChild(this._ocean);
+            // this._ocean =new objects.Ocean();
+            // this.addChild(this._ocean);
+            this._desert = new objects.Desert();
+            this.addChild(this._desert);
             //added island
             this._island = new objects.Island();
             this.addChild(this._island);
@@ -39,8 +41,9 @@ var scenes;
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
-            this._ocean.update();
+            //this._ocean.update();
             this._island.update();
+            this._desert.update();
             for (var cloud in this._clouds) {
                 this._clouds[cloud].update();
                 this._collision.check(cloud);

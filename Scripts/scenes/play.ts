@@ -2,7 +2,8 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _ocean: objects.Ocean;
+       
+        private _desert: objects.Desert;
         private _island:objects.Island;
         private _clouds:objects.Cloud[];
         private _cloudCount:number;
@@ -25,8 +26,11 @@ module scenes {
             //instantiate cloud array
             this._clouds = new Array<objects.Cloud>();
             
-            this._ocean =new objects.Ocean();
-            this.addChild(this._ocean);
+           // this._ocean =new objects.Ocean();
+            // this.addChild(this._ocean);
+            
+            this._desert =new objects.Desert();
+            this.addChild(this._desert);
             
             //added island
             this._island =new objects.Island();
@@ -53,8 +57,9 @@ module scenes {
 
         // PLAY Scene updates here
         public update(): void {
-            this._ocean.update();
+            //this._ocean.update();
             this._island.update();
+            this._desert.update();
             
             for (var cloud in this._clouds)
             {
