@@ -13,6 +13,7 @@ var objects;
             _super.call(this, "desert");
             this._speed.y = 5;
             this._reset(-960);
+            this.name = "desert";
         }
         //PRIVATE METHODS++++++++++++++++++
         Desert.prototype._checkBounds = function (value) {
