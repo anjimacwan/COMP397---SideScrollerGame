@@ -8,7 +8,7 @@ module objects {
         {
             super("desert2");
             this._speed.x=5;
-            this._reset(-1280);
+            this._reset(-640);
             this.name="desert";
         }
         
@@ -17,8 +17,8 @@ module objects {
         
         if(this.x >= value)
         {
-            //Check if the top of the desert has touched the top of the screen
-            this._reset(-1280);
+            //Check if the left of the desert has touched the right of the screen
+            this._reset(-640);
         }    
         }
         

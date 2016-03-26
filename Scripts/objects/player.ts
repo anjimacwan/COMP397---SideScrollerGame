@@ -12,7 +12,7 @@ module objects {
         private _rightBounds:number;
         
         constructor() {
-            super(assets.getResult("plane"));
+            super(assets.getResult("eagle"));
             
             this.width=this.getBounds().width;
             this.height=this.getBounds().height;
@@ -46,7 +46,7 @@ module objects {
         //PUBLIC METHODS
         public update():void {
             
-            this.x = stage.mouseX;
+            this.y = stage.mouseY;
             
             this._checkBounds();
             

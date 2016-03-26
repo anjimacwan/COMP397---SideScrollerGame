@@ -12,14 +12,14 @@ var objects;
         function Desert() {
             _super.call(this, "desert2");
             this._speed.x = 5;
-            this._reset(-1280);
+            this._reset(-640);
             this.name = "desert";
         }
         //PRIVATE METHODS++++++++++++++++++
         Desert.prototype._checkBounds = function (value) {
             if (this.x >= value) {
-                //Check if the top of the desert has touched the top of the screen
-                this._reset(-1280);
+                //Check if the left of the desert has touched the right of the screen
+                this._reset(-640);
             }
         };
         //reset the desert offscreen
