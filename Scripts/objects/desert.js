@@ -10,26 +10,26 @@ var objects;
         //PRIVATE INSTANCE VARIABLES++++++++++++++++++
         //CONSTRUCTOR++++++++++++++++++
         function Desert() {
-            _super.call(this, "desert");
-            this._speed.y = 5;
-            this._reset(-960);
+            _super.call(this, "desert2");
+            this._speed.x = 5;
+            this._reset(-1280);
             this.name = "desert";
         }
         //PRIVATE METHODS++++++++++++++++++
         Desert.prototype._checkBounds = function (value) {
-            if (this.y >= value) {
+            if (this.x >= value) {
                 //Check if the top of the desert has touched the top of the screen
-                this._reset(-960);
+                this._reset(-1280);
             }
         };
         //reset the desert offscreen
         Desert.prototype._reset = function (value) {
-            this.y = value;
+            this.x = value;
         };
         //PUBLIC METHODS+++++++++++++++++
         Desert.prototype.update = function () {
             //scroll the desert by 5px
-            this.y += this._speed.y;
+            this.x += this._speed.x;
             this._checkBounds(0);
         };
         return Desert;

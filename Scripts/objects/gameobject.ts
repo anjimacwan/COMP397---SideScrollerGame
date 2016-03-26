@@ -41,7 +41,7 @@ module objects {
        
         var resetValue:number=0;
         
-        if(this.y >= value)
+        if(this.x >= value)
         {
             //check if y value has met the reset criteria
             this._reset(resetValue);
@@ -50,14 +50,14 @@ module objects {
         
         //reset the ocean offscreen
         protected _reset(value:number):void {
-            this.y= value;
+            this.x= value;
         }
         
         //PUBLIC METHODS+++++++++++++++++
         public update():void {
             var boundValue:number=0;
             //scroll the ocean by 5px
-            this.y +=this._speed.y;
+            this.x +=this._speed.x;
             this._checkBounds(boundValue);
         }
     }
