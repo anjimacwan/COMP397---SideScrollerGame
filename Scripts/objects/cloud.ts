@@ -15,7 +15,7 @@ module objects {
         //PRIVATE METHODS++++++++++++++++++
         protected _checkBounds(value:number):void {
         
-        if(this.y >= value)
+        if(this.x >= value)
         {
             //Check if the top of the ocean has touched the top of the screen
             this._reset(this._topBounds);
@@ -24,17 +24,17 @@ module objects {
         
         //reset the cloud offscreen
         protected _reset(value:number):void {
-            this._speed.y = Math.floor(Math.random() * 5) + 5;
-            this._speed.x =Math.floor(Math.random() * 4) - 2;
-            this.y= value;
-            this.x= Math.floor(Math.random() * this._rightBounds);
+            this._speed.x = Math.floor(Math.random() * 5) + 5;
+            this._speed.y =Math.floor(Math.random() * 4) - 2;
+            this.x= value;
+            this.y= Math.floor(Math.random() * this._rightBounds);
         }
         
         //PUBLIC METHODS+++++++++++++++++
         public update():void {
             //scroll the cloud
-            this.y +=this._speed.y;
-            this.x += this._speed.x;
+            this.x +=this._speed.x;
+            this.y += this._speed.y;
             this._checkBounds(this._bottomBounds);
         }
     }
