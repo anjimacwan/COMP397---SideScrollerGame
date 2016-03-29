@@ -13,6 +13,7 @@ var scene: number;
 var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
+var instructions: scenes.Instructions;
 
 var assetData:objects.Asset[] = [
     // Add your Assets here
@@ -92,6 +93,13 @@ function changeScene(): void {
             menu = new scenes.Menu();
             currentScene = menu;
             console.log("Starting MENU Scene");
+            break;
+        case config.Scene.INSTRUCTIONS:
+            // show the MENU scene
+            stage.removeAllChildren();
+            menu = new scenes.Menu();
+            currentScene = menu;
+            console.log("Starting INSTRUCTIONS Scene");
             break;
         case config.Scene.PLAY:
             // show the PLAY scene

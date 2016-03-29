@@ -10,6 +10,7 @@ var scene;
 var menu;
 var play;
 var end;
+var instructions;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
@@ -73,6 +74,13 @@ function changeScene() {
             menu = new scenes.Menu();
             currentScene = menu;
             console.log("Starting MENU Scene");
+            break;
+        case config.Scene.INSTRUCTIONS:
+            // show the MENU scene
+            stage.removeAllChildren();
+            menu = new scenes.Menu();
+            currentScene = menu;
+            console.log("Starting INSTRUCTIONS Scene");
             break;
         case config.Scene.PLAY:
             // show the PLAY scene
