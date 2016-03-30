@@ -33,10 +33,30 @@ module managers {
             
             if(this.distance(startPoint, endPoint) < minimumDistance)
             {
-                console.log ("Collision!");
-                //scoreboard.addScore(100);
-                  createjs.Sound.play("sound");
+                if (object.getIsColliding()==false) {
+                    
+                    switch(object.name) {
+                       
+                        case "cloud":
+                        object.visible=false;
+                        createjs.Sound.play("sound", 0, 0 , 0 , 0, 0.5, 0);
+                            
+                            if(scoreboard.getLives()==10)
+                            {
+                                scoreboard.removeLives(5);
+                            }
+                            else
+                            {
+                                scoreboard.removeLives(10);
+                            }
+                            
+                        break;
+                    }
+                    object.setIsColliding(true);
+                }
+            } else {
+                object.setIsColliding(false);
+            }
             }
         }
     }
-}
