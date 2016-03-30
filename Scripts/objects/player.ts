@@ -23,7 +23,7 @@ module objects {
             this._leftBounds= this.width * 0.5;
             this._rightBounds= config.Screen.WIDTH - (this.width * 0.5);
             
-            this.y = 430;
+            this.x = 500;
             
         }
         

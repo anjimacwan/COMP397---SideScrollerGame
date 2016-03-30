@@ -37,17 +37,16 @@ var scenes;
             //ADDED COLLISION MANAGER
             this._collision = new managers.Collision(this._player);
             // Score Label
-            this._scoreLabel = new objects.Label("Score: ", "30px Consolas", "#FFFF00", 5, 5, false);
+            this._scoreLabel = new objects.Label("Score: ", "30px Consolas", "white", 5, 5, false);
             this.addChild(this._scoreLabel);
             // Lives Label
-            this._livesLabel = new objects.Label("Lives: ", "30px Consolas", "#FFFF00", 350, 5, false);
+            this._livesLabel = new objects.Label("Lives: ", "30px Consolas", "white", 350, 5, false);
             this.addChild(this._livesLabel);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
-            //this._ocean.update();
             var _this = this;
             this._desert.update();
             /* for (var cloud in this._clouds)

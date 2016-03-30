@@ -8,7 +8,7 @@ module scenes {
         private _cloudCount:number;
         private _player:objects.Player;
         private _collision:managers.Collision;
-       private _scoreLabel: objects.Label;
+        private _scoreLabel: objects.Label;
         private _livesLabel: objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
