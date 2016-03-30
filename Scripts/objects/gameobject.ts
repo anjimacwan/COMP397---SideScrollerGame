@@ -9,7 +9,7 @@ module objects {
         protected _topBounds:number;
         protected _bottomBounds:number;
         protected _isColliding: boolean; 
-                
+        protected _isCollidingPlayer: boolean; 
         
         //PUBLIC VARIABLES
         public name:string;
@@ -54,15 +54,7 @@ module objects {
             this.x= value;
         }
         
-        //PUBLIC METHODS+++++++++++++++++
-        public update():void {
-            var boundValue:number=0;
-            //scroll the ocean by 5px
-            this.x +=this._speed.x;
-            this._checkBounds(boundValue);
-        }
         
-     
 
 // Getter Method to check collision flag of object
         public getIsColliding(): boolean {
@@ -73,5 +65,24 @@ module objects {
         public setIsColliding(isColliding: boolean) {
             this._isColliding = isColliding;
         }
+        
+        public getIsCollidingPlayer(): boolean {
+            return this._isCollidingPlayer;
+        }
+
+        // BULLET Setter Method to set the collision flag of the object - true or false
+        public setIsCollidingPlayer(isCollidingPlayer: boolean) {
+            this._isCollidingPlayer = isCollidingPlayer;
+        }
+        
+        //PUBLIC METHODS+++++++++++++++++
+        public update():void {
+            var boundValue:number=0;
+            //scroll the ocean by 5px
+            this.x +=this._speed.x;
+            this._checkBounds(boundValue);
+        }
+        
+     
     }
 }

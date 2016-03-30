@@ -33,13 +33,6 @@ var objects;
         GameObject.prototype._reset = function (value) {
             this.x = value;
         };
-        //PUBLIC METHODS+++++++++++++++++
-        GameObject.prototype.update = function () {
-            var boundValue = 0;
-            //scroll the ocean by 5px
-            this.x += this._speed.x;
-            this._checkBounds(boundValue);
-        };
         // Getter Method to check collision flag of object
         GameObject.prototype.getIsColliding = function () {
             return this._isColliding;
@@ -47,6 +40,20 @@ var objects;
         // Setter Method to set the collision flag of the object - true or false
         GameObject.prototype.setIsColliding = function (isColliding) {
             this._isColliding = isColliding;
+        };
+        GameObject.prototype.getIsCollidingPlayer = function () {
+            return this._isCollidingPlayer;
+        };
+        // BULLET Setter Method to set the collision flag of the object - true or false
+        GameObject.prototype.setIsCollidingPlayer = function (isCollidingPlayer) {
+            this._isCollidingPlayer = isCollidingPlayer;
+        };
+        //PUBLIC METHODS+++++++++++++++++
+        GameObject.prototype.update = function () {
+            var boundValue = 0;
+            //scroll the ocean by 5px
+            this.x += this._speed.x;
+            this._checkBounds(boundValue);
         };
         return GameObject;
     })(createjs.Bitmap);
