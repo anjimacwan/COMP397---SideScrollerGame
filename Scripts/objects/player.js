@@ -18,6 +18,7 @@ var objects;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             //setting X Position of the player
             this.x = 500;
+            this._bgSound = createjs.Sound.play("bg", 0, 0, 0, -1, 1, 0);
         }
         //PRIVATE METHODS
         Player.prototype._checkBounds = function () {

@@ -87,7 +87,6 @@ module scenes {
             }
             
             
-            
             this._updateScore();
         }
         

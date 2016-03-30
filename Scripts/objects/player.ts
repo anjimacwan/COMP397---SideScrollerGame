@@ -11,6 +11,8 @@ module objects {
         private _topBounds:number;
         private _bottomBounds:number;
         
+        private _bgSound: createjs.AbstractSoundInstance;
+        
         constructor() {
             super(assets.getResult("eagle"));
             
@@ -25,6 +27,8 @@ module objects {
             
             //setting X Position of the player
             this.x = 500;
+            
+            this._bgSound = createjs.Sound.play("bg", 0, 0, 0, -1, 1, 0);
             
         }
         

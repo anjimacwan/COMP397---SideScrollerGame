@@ -20,7 +20,8 @@ var assetData = [
     { id: "desert2", src: "../../Assets/images/desert2.png" },
     { id: "eagle", src: "../../Assets/images/bird.png" },
     { id: "cloud", src: "../../Assets/images/cloud.png" },
-    { id: "sound", src: "../../Assets/audio/sound.mp3" }
+    { id: "sound", src: "../../Assets/audio/sound.mp3" },
+    { id: "bg", src: "../../Assets/audio/bg.mp3" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
