@@ -2,7 +2,7 @@
 module scenes {
     export class Instructions extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _instructionLabel: objects.Label;
+        private _instructionLabel: createjs.Text;
         private _startButton: objects.Button;
         private _image:createjs.Bitmap;
         
@@ -20,10 +20,13 @@ module scenes {
             this.addChild(this._image);
             
             //Add INSTRUCTIONS Label
-            this._instructionLabel = new objects.Label(
-                "For scoring points, save the bird from collision with other objects floating around in the sky! Good Luck! :)", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
+            
+            this._instructionLabel = new createjs.Text("For scoring points, save the bird from collision with \n\n other objects floating around in the sky! Good Luck! :)", "20px Consolas", "white");
+            this._instructionLabel.regX = 0;
+            this._instructionLabel.regY = 0;
+            this._instructionLabel.x = 0;
+            this._instructionLabel.y = 0;
+            
             this.addChild(this._instructionLabel);
             
             
