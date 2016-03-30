@@ -38,8 +38,8 @@ module managers {
                     switch(object.name) {
                        
                         case "cloud":
-                            //object.visible=false;
-                            //createjs.Sound.play("sound", 0, 0 , 0 , 0, 0.5, 0);
+                            object.visible=false;
+                            createjs.Sound.play("sound", 0, 0 , 0 , 0, 0.5, 0);
                             console.log("cloud hit");
                             if (scoreboard.getLives() == 10) {
                                 scoreboard.removeLives(5);

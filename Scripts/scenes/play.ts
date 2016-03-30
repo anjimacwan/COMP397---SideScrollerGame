@@ -8,7 +8,7 @@ module scenes {
         private _cloudCount:number;
         private _player:objects.Player;
         private _collision:managers.Collision;
-       
+       private _label:objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -19,6 +19,14 @@ module scenes {
         
         // Start Method
         public start(): void {
+            
+            //add score label
+            this._label = new objects.Label(
+                "END SCENE", "60px Consolas",
+                "#000000",
+                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
+            this.addChild(this._label);
+            
             
             //set cloudcount
             this._cloudCount=3;
@@ -58,11 +66,11 @@ module scenes {
            
             this._desert.update();
             
-            for (var cloud in this._clouds)
-            {
-                this._clouds[cloud].update();
+            // check if enemy is colliding with player and update it
+            this._clouds.forEach(cloud => {
                 this._collision.check(cloud);
-            }
+                cloud.update();
+            });
             
             this._player.update();
             

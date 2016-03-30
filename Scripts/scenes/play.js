@@ -15,6 +15,9 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            //add score label
+            this._label = new objects.Label("END SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
+            this.addChild(this._label);
             //set cloudcount
             this._cloudCount = 3;
             //instantiate cloud array
@@ -39,11 +42,13 @@ var scenes;
         // PLAY Scene updates here
         Play.prototype.update = function () {
             //this._ocean.update();
+            var _this = this;
             this._desert.update();
-            for (var cloud in this._clouds) {
-                this._clouds[cloud].update();
-                this._collision.check(cloud);
-            }
+            // check if enemy is colliding with player and update it
+            this._clouds.forEach(function (cloud) {
+                _this._collision.check(cloud);
+                cloud.update();
+            });
             this._player.update();
         };
         return Play;
