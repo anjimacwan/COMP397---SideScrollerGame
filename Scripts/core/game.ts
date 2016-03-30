@@ -97,7 +97,7 @@ function changeScene(): void {
         case config.Scene.INSTRUCTIONS:
             // show the MENU scene
             stage.removeAllChildren();
-            menu = new scenes.Menu();
+            instructions = new scenes.Instructions();
             currentScene = menu;
             console.log("Starting INSTRUCTIONS Scene");
             break;
