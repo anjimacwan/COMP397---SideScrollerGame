@@ -15,8 +15,11 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Instructions.prototype.start = function () {
+            //ADD Background image
+            this._image = new createjs.Bitmap("../../Assets/images/angrybird.png");
+            this.addChild(this._image);
             //Add INSTRUCTIONS Label
-            this._instructionLabel = new objects.Label("INSTRUCTIONS SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
+            this._instructionLabel = new objects.Label("For scoring points, save the bird from collision with other objects floating around in the sky! Good Luck! :)", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._instructionLabel);
             // add the Start button to the INSTRUCTIONS scene
             this._startButton = new objects.Button("StartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180, true);

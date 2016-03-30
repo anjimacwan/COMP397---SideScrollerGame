@@ -2,8 +2,8 @@
 module scenes {
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _menuLabel: objects.Label;
         private _startButton: objects.Button;
+        private _image:createjs.Bitmap;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -14,13 +14,9 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._menuLabel);
-            
+            //Add background image
+            this._image=new createjs.Bitmap("../../Assets/images/menubg.png");
+            this.addChild(this._image);
             
             // add the Start button to the MENU scene
             this._startButton = new objects.Button(

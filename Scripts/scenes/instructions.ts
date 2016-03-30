@@ -4,6 +4,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _instructionLabel: objects.Label;
         private _startButton: objects.Button;
+        private _image:createjs.Bitmap;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -14,9 +15,13 @@ module scenes {
         
         // Start Method
         public start(): void {
+            //ADD Background image
+            this._image=new createjs.Bitmap("../../Assets/images/angrybird.png");
+            this.addChild(this._image);
+            
             //Add INSTRUCTIONS Label
             this._instructionLabel = new objects.Label(
-                "INSTRUCTIONS SCENE", "60px Consolas",
+                "For scoring points, save the bird from collision with other objects floating around in the sky! Good Luck! :)", "60px Consolas",
                 "#000000",
                 config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._instructionLabel);
