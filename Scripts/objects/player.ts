@@ -8,8 +8,8 @@ module objects {
         public height:number;
         
         //PRIVATE INSTANCE VARIABLES
-        private _leftBounds:number;
-        private _rightBounds:number;
+        private _topBounds:number;
+        private _bottomBounds:number;
         
         constructor() {
             super(assets.getResult("eagle"));
@@ -20,8 +20,8 @@ module objects {
             this.regX= this.width *0.5;
             this.regY= this.height *0.5;
             
-            this._leftBounds= this.width * 0.5;
-            this._rightBounds= config.Screen.WIDTH - (this.width * 0.5);
+            this._topBounds= this.height * 0.5;
+            this._bottomBounds= config.Screen.HEIGHT - (this.height * 0.5);
             
             //setting X Position of the player
             this.x = 500;
@@ -31,14 +31,14 @@ module objects {
         //PRIVATE METHODS
         private _checkBounds(): void {
             
-            if(this.x < this._leftBounds)
+            if(this.y < this._topBounds)
             {
-                this.x = this._leftBounds;
+                this.y = this._topBounds;
             }
             
-            if(this.x > this._rightBounds)
+            if(this.y > this._bottomBounds)
             {
-                this.x = this._rightBounds;
+                this.y = this._bottomBounds;
             }
             
         }
