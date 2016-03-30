@@ -16,6 +16,7 @@ var objects;
             this.regY = this.height * 0.5;
             this._leftBounds = this.width * 0.5;
             this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
+            //setting X Position of the player
             this.x = 500;
         }
         //PRIVATE METHODS
