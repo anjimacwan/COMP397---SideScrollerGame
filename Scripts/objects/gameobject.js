@@ -40,6 +40,14 @@ var objects;
             this.x += this._speed.x;
             this._checkBounds(boundValue);
         };
+        // Getter Method to check collision flag of object
+        GameObject.prototype.getIsColliding = function () {
+            return this._isColliding;
+        };
+        // Setter Method to set the collision flag of the object - true or false
+        GameObject.prototype.setIsColliding = function (isColliding) {
+            this._isColliding = isColliding;
+        };
         return GameObject;
     })(createjs.Bitmap);
     objects.GameObject = GameObject;

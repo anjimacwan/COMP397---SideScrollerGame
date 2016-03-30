@@ -1,9 +1,5 @@
 ﻿/// <reference path = "_reference.ts" />
 
-var scoreboard: managers.ScoreBoard;
-
-scoreboard= new managers.ScoreBoard();
-
 // global variables
 var assets: createjs.LoadQueue;
 var canvas: HTMLElement;
@@ -18,6 +14,9 @@ var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
 var instructions: scenes.Instructions;
+
+
+var scoreboard: managers.ScoreBoard;
 
 
 var assetData:objects.Asset[] = [
@@ -55,6 +54,9 @@ function init(): void {
     
     // sets up our stats counting workflow
     setupStats(); 
+    
+    //initialize scoreboard
+    scoreboard= new managers.ScoreBoard();
     
     // set initial scene
     scene = config.Scene.MENU;

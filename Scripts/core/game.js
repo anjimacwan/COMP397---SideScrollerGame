@@ -1,6 +1,4 @@
 /// <reference path = "_reference.ts" />
-var scoreboard;
-scoreboard = new managers.ScoreBoard();
 // global variables
 var assets;
 var canvas;
@@ -13,6 +11,7 @@ var menu;
 var play;
 var end;
 var instructions;
+var scoreboard;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
@@ -41,6 +40,8 @@ function init() {
     createjs.Ticker.on("tick", gameLoop, this);
     // sets up our stats counting workflow
     setupStats();
+    //initialize scoreboard
+    scoreboard = new managers.ScoreBoard();
     // set initial scene
     scene = config.Scene.MENU;
     changeScene();
