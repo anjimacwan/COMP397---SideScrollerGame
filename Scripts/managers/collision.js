@@ -20,6 +20,8 @@ var managers;
             endPoint.y = object.centerY;
             if (this.distance(startPoint, endPoint) < minimumDistance) {
                 console.log("Collision!");
+                //scoreboard.addScore(100);
+                createjs.Sound.play("sound");
             }
         };
         return Collision;

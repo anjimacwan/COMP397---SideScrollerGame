@@ -6,11 +6,11 @@
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/gameobject.ts" />
-/// <reference path="../objects/island.ts" />
 /// <reference path="../objects/scene.ts" />
 /// <reference path="../objects/player.ts" />
 
 /// <reference path="../managers/collision.ts" />
+/// <reference path="../managers/scoreboard.ts" />
 
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/desert.ts" />

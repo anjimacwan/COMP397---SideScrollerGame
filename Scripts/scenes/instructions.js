@@ -19,7 +19,7 @@ var scenes;
             this._image = new createjs.Bitmap("../../Assets/images/angrybird.png");
             this.addChild(this._image);
             //Add INSTRUCTIONS Label
-            this._instructionLabel = new createjs.Text("For scoring points, save the bird from collision with \n\n other objects floating around in the sky! Good Luck! :)", "20px Consolas", "white");
+            this._instructionLabel = new createjs.Text("For scoring points, save the bird from collision with \n\nother objects floating around in the sky! Good Luck! :)", "20px Consolas", "white");
             this._instructionLabel.regX = 0;
             this._instructionLabel.regY = 0;
             this._instructionLabel.x = 0;

@@ -1,4 +1,6 @@
 /// <reference path = "_reference.ts" />
+var scoreboard;
+scoreboard = new managers.ScoreBoard();
 // global variables
 var assets;
 var canvas;
@@ -18,7 +20,6 @@ var assetData = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "desert2", src: "../../Assets/images/desert2.png" },
     { id: "eagle", src: "../../Assets/images/bird.png" },
-    { id: "island", src: "../../Assets/images/island.png" },
     { id: "cloud", src: "../../Assets/images/cloud.png" }
 ];
 function preload() {

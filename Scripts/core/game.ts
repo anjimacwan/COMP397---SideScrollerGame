@@ -1,5 +1,9 @@
 ﻿/// <reference path = "_reference.ts" />
 
+var scoreboard: managers.ScoreBoard;
+
+scoreboard= new managers.ScoreBoard();
+
 // global variables
 var assets: createjs.LoadQueue;
 var canvas: HTMLElement;
@@ -15,6 +19,7 @@ var play: scenes.Play;
 var end: scenes.End;
 var instructions: scenes.Instructions;
 
+
 var assetData:objects.Asset[] = [
     // Add your Assets here
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
@@ -22,7 +27,6 @@ var assetData:objects.Asset[] = [
     {id: "BackButton", src:"../../Assets/images/BackButton.png"},
     {id: "desert2", src:"../../Assets/images/desert2.png"},
     {id: "eagle", src:"../../Assets/images/bird.png"},
-    {id: "island", src:"../../Assets/images/island.png"},
     {id: "cloud", src:"../../Assets/images/cloud.png"}
 ];
 
